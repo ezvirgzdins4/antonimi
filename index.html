@@ -9,6 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 <title> Antonīmu spēle </title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="antonimufunkcijas.js"></script>
 <style>
 * {
   box-sizing: border-box;
@@ -36,7 +37,7 @@ body {
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 30px 30px;
+  padding: 40px 40px;
   text-decoration: none;
   width: 20%;
 }
@@ -92,6 +93,8 @@ body {
 <div class="content">
   <h2>Antonīmu spēle</h2>
   <p>Izbaudi šo lielisko izklaides iespēju un iemācies jaunus vārdus!</p>
+ 
+  
   
 </div>
 
@@ -99,6 +102,8 @@ body {
  
   <h2>Spēlēt</h2>
   <p>Spēle drīz tiks izstrādāta un būs pieejama šeit!</p>
+  <button onclick="sakt();">Sākt</button>
+        <p id="demo"></p>
 </div>
 
 <div class="content" id="rulesContent" style="display: none; text-align: center;">
@@ -152,6 +157,33 @@ function showContent(contentId) {
     contentToShow.style.display = 'block';
   }
 }
+// no https://www.w3schools.com/howto/howto_js_countdown.asp 
+            var countDownDate, spele;
+            function sakt() {
+                countDownDate = new Date().getTime()+30000;
+                spele = setInterval(skaita, 1000);
+            }
+        // Update the count down every 1 second
+            function skaita() {
+                let now = new Date().getTime();
+                // Find the distance between now and the count down date
+                let distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Output the result in an element with id="demo"
+                document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s ";
+
+                // If the count down is over, write some text 
+                if (distance < 1) {
+                    clearInterval(spele);
+                    document.getElementById("demo").innerHTML = "Spēle beigusies!";
+                }
+            }
+
+ 
 </script>
 
 
