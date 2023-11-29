@@ -99,14 +99,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
         <div class="content" id="playContent" style="display: none; text-align: center;">
             <!-- Content for 'Spēlēt' goes here -->
-            <h2>Spēlēt</h2>
-            <p>Ieraksti antonīmu šeit!</p>
-            <input type="text">
+            <h1>Spēlēt</h1>
             
-            <button onclick="sakt();">Sākt</button>
+            <div id="score">Score: <span id="scoreValue">0</span></div>
+            <div id="word"></div>
+            <input type="text" id="input" placeholder="Ievadi Antonīmu!">
+            <button onclick="resetGame(); sakt();">Sākt</button>
             <p id="demo"></p>
-            
-            <button onclick="enter();">Enter</button>
+
+            <button onclick="checkAntonym();">Enter</button>
             <p id="demo"></p>
 
 
@@ -117,6 +118,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <h2>Noteikumi</h2>
             <p>Spēles noteikumi tiks publicēti nākamnedēļ!</p>
         </div>
+
 
         <div class="content" id="resultsContent" style="display: none; text-align: center;">
             <!-- Content for 'Rezultāti' goes here -->
