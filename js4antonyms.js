@@ -17,28 +17,7 @@ function openPage(pageName, elmnt, color) {
     document.getElementById(pageName).style.display = "block";
     elmnt.style.backgroundColor = color;
 }
-// Get the element with id="defaultOpen" and click on it
-var vardi = ["SAULE", "PĒRKONS", "DAUGAVA"];
-function enter() {
-    let i = 1;
-    return vardi[i];
-}
-function sajauc(vards) {
-    let randomPairs = [];
-    for (let i = 0; i < vards.length; i++) {
-        let nr = Math.floor(Math.random() * 100);
-        randomPairs[i] = {"index": i, "random": nr};
-    }
-    randomPairs.sort(function (a, b) {
-        return a.random - b.random
-    });
-    let sajaukts = "";
-    for (let i = 0; i < vards.length; i++) {
-        sajaukts += vards.charAt(randomPairs[i]["index"]);
-    }
-    return sajaukts;
-}
-        // no https://www.w3schools.com/howto/howto_js_countdown.asp 
+
             var countDownDate, spele;
             function sakt () {
                 countDownDate = new Date().getTime() + 30000;
