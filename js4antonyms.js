@@ -23,6 +23,7 @@ function openPage(pageName, elmnt, color) {
                 countDownDate = new Date().getTime() + 30000;
                 spele = setInterval(skaita, 1000);
                 
+                
             }
         // Update the count down every 1 second
             function skaita() {
@@ -83,15 +84,15 @@ function openPage(pageName, elmnt, color) {
         [array[i], array[j]] = [array[j], array[i]];
       }
     }
-
     // Function to initialize a new round
-    function newRound() {
+    function radit() {
       shuffleArray(wordList);
       currentWordIndex = 0;
 
       document.getElementById("word").textContent = "Word: " + wordList[currentWordIndex].word;
       document.getElementById("input").value = "";
     }
+
 
     // Function to check the antonym
     function checkAntonym() {
@@ -112,17 +113,13 @@ function openPage(pageName, elmnt, color) {
         document.getElementById("word").textContent = "Word: " + wordList[currentWordIndex].word;
       } else {
         alert("Game Over. Your final score is: " + score);
-        // You can add more logic here, such as displaying a high score.
+        
+        // You can add more logic here, such as resetting the game or displaying a high score.
         newRound();
       }
     }
+    resetGame();
+   
 
-    // Function to reset the game
-    function resetGame() {
-      score = 0;
-      document.getElementById("scoreValue").textContent = score;
-      newRound();
-    }
-
-    // Start the game
-    newRound();
+    
+    

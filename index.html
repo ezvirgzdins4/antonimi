@@ -9,7 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 <title> Antonīmu spēle </title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="antonimufunkcijas.js"></script>
+<script src="js4antonyms.js"></script>
 <style>
 * {
   box-sizing: border-box;
@@ -104,9 +104,9 @@ body {
   <div id="score">Score: <span id="scoreValue">0</span></div>
   <div id="word"></div>
   <input type="text" id="input" placeholder="Enter the antonym">
-  <button onclick="sakt();">Sākt</button>
-  <button onclick="skaita();">enter</button>
-        
+  <button onclick="sakt(); radit(); ">Sākt</button>
+  <button onclick="checkAntonym();clear();">enter</button>
+  <div id="demo"></div>      
 </div>
 
 <div class="content" id="rulesContent" style="display: none; text-align: center;">
